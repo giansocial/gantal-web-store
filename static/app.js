@@ -13,7 +13,7 @@ const WA_NUMBER = '51920994032';
 const PRICE_SPORT    = { S:48, M:48, L:48, XL:55, XXL:58 };
 const PRICE_LINO     = { S:65, M:65, L:65, XL:70, XXL:70 };
 const PRICE_LABRADAS = { S:50, M:50, L:50, XL:56, XXL:56 };
-const TABLA = '/images/tabla-medidas.jpeg';
+const TABLA = null; // Foto de tabla eliminada
 
 /* ══════════════════════════════════════════════════════════
    CATÁLOGO — 36 productos
@@ -477,6 +477,9 @@ const PRODUCTS = [
     ],
   },
 ];
+
+// Limpiar imágenes null (tabla de medidas eliminada)
+PRODUCTS.forEach(p => { p.images = p.images.filter(img => img !== null); });
 
 /* ── State ─────────────────────────────────────────────── */
 let currentCategory = null;
